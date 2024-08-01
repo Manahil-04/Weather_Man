@@ -32,7 +32,6 @@ Weather Man is a Python application that processes weather data files to generat
     01 11C ++++++++++++++++++++++++++++++++++++ 25C
     02 08C ++++++++++++++++++++++++++++++ 22C
     ```
-    <span style="color: green"> Some green text </span>
 
 ## Installation
 1. Clone the repository:
