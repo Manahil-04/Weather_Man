@@ -1,8 +1,22 @@
 class Calculations:
+    """
+    Performs calculations on weather data.
+    """
+    
     def __init__(self, dictionary):
         self.dictionary = dictionary
 
     def yearly_calculations(self, year):
+        """
+        Calculates the highest temperature, lowest temperature, and most humid day for a given year.
+
+        Args:
+            year (int): The year for the calculations.
+
+        Returns:
+            dict: A dictionary containing the calculated values.
+        """
+        
         highest_temp = {'value': -float('inf'), 'month': None, 'date': None}
         lowest_temp =  {'value': float('inf'), 'month': None, 'date': None}
         most_humidity = {'value': -float('inf'), 'month': None, 'date': None}
@@ -36,6 +50,17 @@ class Calculations:
         }
 
     def monthly_calculations(self, year, month):
+        """
+        Calculates the average highest temperature, average lowest temperature, and average mean humidity for a given month and year.
+
+        Args:
+            year (int): The year for the calculations.
+            month (str): The month for the calculations.
+
+        Returns:
+            dict: A dictionary containing the calculated values.
+        """
+
         sum_highest_temp = 0
         sum_lowest_temp = 0
         sum_mean_humidity = 0
@@ -61,6 +86,17 @@ class Calculations:
         }
 
     def daily_high_low_temp(self, year, month):
+        """
+        Calculates the daily high and low temperatures for a given month and year.
+
+        Args:
+            year (int): The year for the calculations.
+            month (str): The month for the calculations.
+
+        Returns:
+            dict: A dictionary containing the daily high and low temperatures.
+        """
+        
         daily_temp_dict = {}
 
         all_files_parsed = self.dictionary
