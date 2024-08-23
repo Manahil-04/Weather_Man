@@ -4,6 +4,8 @@ from reports import Reports
 
 
 def show_menu():
+    """Displays the main menu for the weather reporting application."""
+
     print("Menu:")
     print("1. For a given year display the highest temperature and day, lowest temperature and day, most humid day and humidity.")
     print("2. For a given month display the average highest temperature, average lowest temperature, average mean humidity.")
@@ -12,6 +14,8 @@ def show_menu():
     print("5. Exit")
 
 def number_to_month(month_number):
+    """Converts a month number to its corresponding name."""
+
     month_names = [
         'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 
         'Sep', 'Oct', 'Nov', 'Dec'
@@ -20,6 +24,8 @@ def number_to_month(month_number):
     return month_names[month_number - 1]
 
 def main():
+    """The main entry point of the application."""
+
     folder_path = 'Weather_Man/weatherfiles'
     
     parser = WeatherDataParser(folder_path)
