@@ -30,11 +30,11 @@ class WeatherDataParser:
     def parse_file(self, file_path):
         df = pd.read_csv(file_path)
 
-        numericCols = df.select_dtypes(include='number').columns
-        df[numericCols] = df[numericCols].fillna(df[numericCols].mean())
+        numeric_cols = df.select_dtypes(include='number').columns
+        df[numeric_cols] = df[numeric_cols].fillna(df[numeric_cols].mean())
         
-        nonNumericCols = df.select_dtypes(exclude='number').columns
-        df[nonNumericCols] = df[nonNumericCols].fillna(value=np.nan)
+        non_numeric_cols = df.select_dtypes(exclude='number').columns
+        df[non_numeric_cols] = df[non_numeric_cols].fillna(value=np.nan)
 
 
         readings = {}
