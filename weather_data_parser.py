@@ -3,12 +3,25 @@ import pandas as pd
 import numpy as np
 
 class WeatherDataParser:
-    def __init__(self, folder_path):
+    """
+    Parses weather data from CSV files within a specified folder.
+
+    Args:
+        folder_path (str): The path to the folder containing CSV files.
+    """
+    
+    def __init__(self, folder_path):   
         self.folder_path = folder_path
         self.weather_reading = self.process_folder()
 
 
     def process_folder(self):
+        """
+        Processes all CSV files in the specified folder.
+
+        Returns:
+            dict: A dictionary containing parsed weather data for each year and month.
+        """
         weather_readings = {}
 
         for filename in os.listdir(self.folder_path):
@@ -28,6 +41,16 @@ class WeatherDataParser:
         return weather_readings
 
     def parse_file(self, file_path):
+        """
+        Parses a single CSV file.
+
+        Args:
+            file_path (str): The path to the CSV file.
+
+        Returns:
+            dict: A dictionary containing parsed weather data for the file.
+        """
+        
         df = pd.read_csv(file_path)
 
         numeric_cols = df.select_dtypes(include='number').columns
